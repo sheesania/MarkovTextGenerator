@@ -1,0 +1,30 @@
+﻿<Window x:Class="MarkovTextGeneratorWGui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="365" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="5, 5">
+            Welcome to Markov Text Generator. Please enter your input text below or load it from a file.
+        </TextBlock>
+        <Button Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5">Load File</Button>
+        <TextBox Grid.Row="2" AcceptsReturn="True" TextWrapping="Wrap" Height="200" Width="500" Margin="5"/>
+        <WrapPanel Grid.Row="3" HorizontalAlignment="Center">
+            <Label Target="{Binding ElementName=sldGroupSize}">_Letter group size</Label>
+            <Slider Name="sldGroupSize" Width="100" Value="3" Minimum="1" Maximum="15" TickPlacement="BottomRight" TickFrequency="1"/>
+            <Label Target="{Binding ElementName=txtNumWords}">Number of words to generate</Label>
+            <TextBox Name="txtNumWords" Width="125"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="4" HorizontalAlignment="Center">
+            <Button Margin="5">Generate Words</Button>
+            <Button Margin="5">Exit</Button>
+        </WrapPanel>
+        
+    </Grid>
+</Window>

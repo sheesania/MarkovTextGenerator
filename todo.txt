@@ -1,0 +1,3 @@
+-Author/copyright info at beginning
+-Take out "broken for groupsize > 1" bit
+-Remove usage commentary
