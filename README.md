@@ -1,17 +1,15 @@
 # MarkovTextGenerator
-Generates text similar to input text using Markov probability chains.
-
-Given a text file, this program analyzes the pattern of text in the file, creating Markov chains of letters/words that are statistically likely to appear after each letter/word. Then it can generate text similar to the input using the Markov chains.
+Builds a configurable n-gram model of input text, then generates randomized output text using probabilistic Markov chains. Essentially, given a text file, this program analyzes which letters or words often come after each letter or word. Then it generates new text using those probabilities as weights, resulting in generated text more or less similar to the input text. 
 
 ## Usage
 
-`mtg.exe -i *input_path* -o *num_words_to_generate* [-g *group_size*] [-w]`
+`mtg.exe -i *input_path* -o *num_words_to_generate* [-g *n-gram_size*] [-w]`
 
 Input path: Path to a plain text file with at least one space.
 
 Num words to generate: Number of words to generate from the input text.
 
-Group size: Number of characters or words to group together in Markov chains. Defaults to 1. The larger the group size, the closer the generated text will be to the input text.
+N-gram size (formerly "group size"): Number of characters or words to group together and consider as one unit when building the Markov chain. Defaults to 1. The larger the n-gram size, the closer the generated text will be to the input text. (This used to be called "group size" before I learned the term "n-gram".)
 
 -w: Calculate probabilities based on words (delimited by spaces) instead of by chunks of characters.
 
